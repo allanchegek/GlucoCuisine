@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboardingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".features.onboarding.presentation.view.OnboardingFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:layoutAnimation="@anim/entrance_layout_anim"
+        android:overScrollMode="never"
+        tools:itemCount="3" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsColor="@color/colorOnSurface"
+        app:dotsSize="12dp"
+        app:selectedDotColor="@color/colorOnSurface" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
+
+    <Button
+        android:id="@+id/buttonStart"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_accent_background"
+        android:elevation="2dp"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:paddingHorizontal="24dp"
+        android:text="@string/get_started"
+        android:textColor="@color/colorOnOverlay"
+        android:textSize="18sp"
+        app:rippleColor="@color/colorSurface" />
+
+
+</LinearLayout>

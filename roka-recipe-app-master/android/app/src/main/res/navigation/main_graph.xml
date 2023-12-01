@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.fabirt.roka.features.home.presentation.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.fabirt.roka.features.onboarding.presentation.view.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/webDetailFragment"
+        android:name="com.fabirt.roka.features.detail.presentation.view.WebDetailFragment"
+        android:label="fragment_web_detail"
+        tools:layout="@layout/fragment_web_detail" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.fabirt.roka.features.detail.presentation.view.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail">
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_photoRecipeFragment"
+            app:destination="@id/photoRecipeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_webDetailFragment"
+            app:destination="@id/webDetailFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/scale_move_out"
+            app:popEnterAnim="@anim/scale_move_in"
+            app:popExitAnim="@anim/slide_out_down" />
+        <argument
+            android:name="transitionName"
+            app:argType="string"
+            app:nullable="true" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="roka.recipes/{id}?arg1={transitionName}" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoRecipeFragment"
+        android:name="com.fabirt.roka.features.detail.presentation.view.PhotoRecipeFragment"
+        android:label="fragment_photo_recipe"
+        tools:layout="@layout/fragment_photo_recipe" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_recipeDetailFragment"
+        app:destination="@id/recipeDetailFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.fabirt.roka.features.splash.presentation.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

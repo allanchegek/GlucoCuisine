@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Roka</string>
+    <string name="categories_title">Home</string>
+    <string name="recipes_title">Recipes</string>
+    <string name="search_title">Search</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="cd_search_bar_icon">Search input text</string>
+    <string name="cd_clear_search_bar">Clear search text</string>
+    <string name="search_bar_hint">Search</string>
+    <string name="get_started">Get Started</string>
+    <string name="onboarding_title_1">Quick &amp;\neasy recipes</string>
+    <string name="onboarding_body_1">Get the latest, quickest and easiest\nhome recipes.</string>
+    <string name="onboarding_title_2">Discover\nworldwide recipes</string>
+    <string name="onboarding_body_2">Search for your favorite traditional\nand continental recipes.</string>
+    <string name="onboarding_title_3">Save your\nfavorite recipes</string>
+    <string name="onboarding_body_3">Save your favorite recipes, create your\nown recipe book and share it with friends.</string>
+    <string name="minutes_label">%1$d min</string>
+    <string name="by_source">by %1$s</string>
+    <string name="unknown">Unknown</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="retry">Try again</string>
+    <string name="no_results_found">No results found</string>
+    <string name="share_title">Share recipe</string>
+    <string name="share_content">Hi! look at this delicious %1$s here roka.recipes/%2$s or visit the website %3$s</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="preparation_title">Preparation</string>
+    <string name="no_favorites">Find your favorite recipes\nand save them</string>
+    <string name="network_error">You have lost network connectivity. Please check your connection.</string>
+    <string name="limit_exceeded_error">Sorry, you have exceeded the number of daily searches. Please try again later.</string>
+    <string name="server_error">Sorry, a server error has occurred. Please try again.</string>
+    <string name="unexpected_error">Sorry, an unexpected error has occurred. Please try again.</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="delete_favorites_message">Are you sure you want to delete (%1$d) recipes from your favorites list?</string>
+</resources>

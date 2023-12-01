@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    app:layoutDescription="@xml/fragment_recipe_detail_scene"
+    tools:context=".features.detail.presentation.view.RecipeDetailFragment">
+
+    <ImageView
+        android:id="@+id/ivRecipe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:transitionName="recipeImage"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/recipe_image_overlay"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRecipe"
+        app:layout_constraintEnd_toEndOf="@+id/ivRecipe"
+        app:layout_constraintStart_toStartOf="@+id/ivRecipe"
+        app:layout_constraintTop_toTopOf="@+id/ivRecipe" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorOnOverlay"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivPeople"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Strawberry Smoothie dhiddhhidhdu" />
+
+    <ImageView
+        android:id="@+id/ivPeople"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_people"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRecipe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/colorAccent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_regular"
+        android:textColor="@color/colorOnOverlay"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPeople"
+        app:layout_constraintStart_toEndOf="@+id/ivPeople"
+        app:layout_constraintTop_toTopOf="@+id/ivPeople"
+        tools:text="12" />
+
+    <ImageView
+        android:id="@+id/ivScore"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPeople"
+        app:layout_constraintStart_toEndOf="@+id/tvPeople"
+        app:layout_constraintTop_toTopOf="@+id/tvPeople"
+        app:tint="@color/colorAccent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/sf_pro_text_regular"
+        android:textColor="@color/colorOnOverlay"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivScore"
+        app:layout_constraintStart_toEndOf="@+id/ivScore"
+        app:layout_constraintTop_toTopOf="@+id/ivScore"
+        tools:text="93" />
+
+    <ImageView
+        android:id="@+id/ivTime"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_time"
+        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+        app:layout_constraintStart_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toTopOf="@+id/tvScore"
+        app:tint="@color/colorAccent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/sf_pro_text_regular"
+        android:textColor="@color/colorOnOverlay"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTime"
+        app:layout_constraintStart_toEndOf="@+id/ivTime"
+        app:layout_constraintTop_toTopOf="@+id/ivTime"
+        tools:text="25 min" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/icon_button_ripple"
+        android:padding="12dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorOnOverlay"
+        tools:ignore="ContentDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:layoutAnimation="@anim/detail_layout_anim"
+        android:overScrollMode="never"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRecipe"
+        tools:layoutAnimation="@null"
+        tools:listitem="@layout/view_direction" />
+
+    <ImageView
+        android:id="@+id/ivWeb"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/icon_button_ripple"
+        android:padding="12dp"
+        android:src="@drawable/ic_web"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSave"
+        app:layout_constraintEnd_toStartOf="@id/ivShare"
+        app:layout_constraintTop_toTopOf="@+id/ivSave"
+        app:tint="@color/colorOnOverlay"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/icon_button_ripple"
+        android:padding="12dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSave"
+        app:layout_constraintEnd_toStartOf="@id/ivSave"
+        app:layout_constraintTop_toTopOf="@+id/ivSave"
+        app:tint="@color/colorOnOverlay"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivSave"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/icon_button_ripple"
+        android:padding="12dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorOnOverlay"
+        tools:ignore="ContentDescription" />
+
+    <include
+        layout="@layout/view_error"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRecipe" />
+
+    <include
+        layout="@layout/view_spin_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRecipe" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
